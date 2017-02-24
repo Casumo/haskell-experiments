@@ -4,12 +4,16 @@
 import Test.Hspec
 import Test.QuickCheck
 import Control.Exception (evaluate)
+import Lib (valid)
 
 main :: IO ()
 main = hspec $ do
   describe "About credit card numbers"  $ do
     it "A credit card number should be 16 digits" $ do
-      valid "4716 7815 0354 3680" `shouldBe` True
+      valid 4716781503543680 `shouldBe` True
+
+    it "Number with less than 16 digits should fail" $ do
+      valid 1234 `shouldBe` False
 
 
 

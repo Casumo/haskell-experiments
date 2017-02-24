@@ -1,9 +1,14 @@
 module Lib
-    ( someFunc
+    ( valid
     ) where
+
+type CC = [Integer]
 
 someFunc :: IO ()
 someFunc = putStrLn "someFunc"
+
+valid :: Integer -> Bool
+valid ccNumber = True
 
 
 --Double the value of every second digit beginning from the right.
