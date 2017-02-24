@@ -7,15 +7,10 @@ import Control.Exception (evaluate)
 
 main :: IO ()
 main = hspec $ do
-  describe "Prelude.head" $ do
-    it "returns the first element of a list" $ do
-      head [23 ..] `shouldBe` (23 :: Int)
+  describe "About credit card numbers"  $ do
+    it "A credit card number should be 16 digits" $ do
+      valid "4716 7815 0354 3680" `shouldBe` True
 
-    it "returns the first element of an *arbitrary* list" $
-      property $ \x xs -> head (x:xs) == (x :: Int)
-
-    it "throws an exception if used with an empty list" $ do
-      evaluate (head []) `shouldThrow` anyException
 
 
 --Double the value of every second digit beginning from the right.
