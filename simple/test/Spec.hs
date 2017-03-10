@@ -4,7 +4,7 @@
 import Test.Hspec
 import Test.QuickCheck
 import Control.Exception (evaluate)
-import Lib (valid)
+import Lib (valid, integerToDigits)
 
 main :: IO ()
 main = hspec $ do
@@ -14,6 +14,10 @@ main = hspec $ do
 
     it "Number with less than 16 digits should fail" $ do
       valid 1234 `shouldBe` False
+
+  describe "Internals" $ do
+    it "Should convert digits to list of integers" $ do
+      integerToDigits 1234 `shouldBe` [1, 2, 3, 4]
 
 
 
