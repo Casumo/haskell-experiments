@@ -9,7 +9,8 @@ someFunc :: IO ()
 someFunc = putStrLn "someFunc"
 
 valid :: Integer -> Bool
-valid ccNumber = True
+valid ccNumber =
+  (length (integerToDigits ccNumber)) == 16
 
 integerToDigits :: Integer -> CC
 integerToDigits x
