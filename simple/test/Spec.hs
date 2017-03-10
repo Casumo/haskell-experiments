@@ -4,7 +4,7 @@
 import Test.Hspec
 import Test.QuickCheck
 import Control.Exception (evaluate)
-import Lib (valid, integerToDigits)
+import Lib (valid, integerToDigits, doubleSeconds)
 
 main :: IO ()
 main = hspec $ do
@@ -19,7 +19,7 @@ main = hspec $ do
     it "Should convert digits to list of integers" $ do
       integerToDigits 1234 `shouldBe` [1, 2, 3, 4]
 
-    it "Can double every second digit beginning from the right"
+    it "Can double every second digit beginning from the right" $ do
       doubleSeconds [1,3,8,6] `shouldBe` [2,3,16,6]
       doubleSeconds [1,3,8] `shouldBe` [1,6,8]
 

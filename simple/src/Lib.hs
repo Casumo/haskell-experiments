@@ -1,6 +1,7 @@
 module Lib
     ( valid,
-      integerToDigits
+      integerToDigits,
+      doubleSeconds
     ) where
 
 type CC = [Integer]
@@ -19,7 +20,9 @@ integerToDigits x
 
 doubleSeconds :: CC -> CC
 doubleSeconds x
-  |
+  -- | reverse x
+    -- "pseudocode" | (last:second:tail) = (doubleSeconds (reverse tail)) ++ [second * 2, last]
+  | otherwise = x
 
 -- Double the value of every second digit beginning from the right.
 -- That is, the last digit is unchanged; the second-to-last digit is doubled;
