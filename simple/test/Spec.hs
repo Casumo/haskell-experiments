@@ -19,6 +19,10 @@ main = hspec $ do
     it "Should convert digits to list of integers" $ do
       integerToDigits 1234 `shouldBe` [1, 2, 3, 4]
 
+    it "Can double every second digit beginning from the right"
+      doubleSeconds [1,3,8,6] `shouldBe` [2,3,16,6]
+      doubleSeconds [1,3,8] `shouldBe` [1,6,8]
+
 
 
 

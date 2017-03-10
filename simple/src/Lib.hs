@@ -17,15 +17,9 @@ integerToDigits x
   | x < 10 = [x]
   | otherwise = integerToDigits(x `div` 10) ++ [(x `mod` 10)]
 
-  -- todo: define an inner function so we can reverse the array of digits
-
--- [] :: x `mod` 10
---
--- integerToDigits(x `div` 10):(x `mod` 10)
--- []:1:2
--- 1:2:[]
--- ++
-
+doubleSeconds :: CC -> CC
+doubleSeconds x
+  |
 
 -- Double the value of every second digit beginning from the right.
 -- That is, the last digit is unchanged; the second-to-last digit is doubled;
