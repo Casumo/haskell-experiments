@@ -19,10 +19,11 @@ integerToDigits x
   | otherwise = integerToDigits(x `div` 10) ++ [(x `mod` 10)]
 
 doubleSeconds :: CC -> CC
-doubleSeconds x
-  -- | reverse x
-    -- "pseudocode" | (last:second:tail) = (doubleSeconds (reverse tail)) ++ [second * 2, last]
-  | otherwise = x
+doubleSeconds =
+  reverse . doubleSecondsReversed . reverse
+  where
+    doubleSecondsReversed (x:y:xs) = x : (y * 2) : (doubleSecondsReversed xs)
+    doubleSecondsReversed x = x
 
 -- Double the value of every second digit beginning from the right.
 -- That is, the last digit is unchanged; the second-to-last digit is doubled;
