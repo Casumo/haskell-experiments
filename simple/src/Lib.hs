@@ -1,7 +1,8 @@
 module Lib
     ( valid,
       integerToDigits,
-      doubleSeconds
+      doubleSeconds,
+      sumDigits
     ) where
 
 type CC = [Integer]
@@ -24,6 +25,9 @@ doubleSeconds =
   where
     doubleSecondsReversed (x:y:xs) = x : (y * 2) : (doubleSecondsReversed xs)
     doubleSecondsReversed x = x
+
+sumDigits :: CC -> Integer
+sumDigits xs = sum $ xs >>= integerToDigits
 
 -- Double the value of every second digit beginning from the right.
 -- That is, the last digit is unchanged; the second-to-last digit is doubled;
